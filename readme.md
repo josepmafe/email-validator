@@ -1,6 +1,6 @@
 # Email validator
 
-`email-validator` is a (project of) `Python` designed to validate the syntax of a given email address. 
+`email-validator` is a (project of) `Python` package designed to validate the syntax of a given email address. 
 
 Any e-mail address is made of a local part, the symbol `@` and a domain name. Thus, the validation process is done in three steps, and using RegEx patterns:
 1. Check if the email address has a valid base format, i.e., `localpart@domainname`.
