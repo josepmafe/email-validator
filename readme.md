@@ -1,15 +1,15 @@
 # Email validator
 
+`email-validator` is a (project of) `Python` designed to validate the syntax of a given email address. 
+
 Any e-mail address is made of a local part, the symbol `@` and a domain name. Thus, the validation process is done in three steps, and using RegEx patterns:
 1. Check if the email address has a valid base format, i.e., `localpart@domainname`.
 2. Check the local part format.
 3. Check the domain name format.
 
-Because a vast majority of the users use an unquoted address, the validator do not accepts addresses with a quoted local part. For more information about the formatting of the local part, see this [link](https://en.wikipedia.org/wiki/Email_address#Local-part). In addition, as IP domain names are extremly rare except in email spam, the validator does not accept them either. For more information about the domain formatting, see this other [link](https://en.wikipedia.org/wiki/Email_address#Domain).
-
 Of course, using RegEx patterns I can only verify that the email address is sintactically correct, but not whether it was misstyped or if it (exists checking the SMTP server). For a more complete validator that does extra verifications, one might use the `Python` third-party library `validate-email` (see their GitHub [repo](https://github.com/syrusakbary/validate_email)).
 
-In the following cell I include `EmailValidator`, which is a `Python` class designed to check whether an email address is valid or not. To use it, one only needs to instantiate it and use its convenience function `is_valid`, which returns a boolean value indicating whether the input email is valid or not. In case `is_email_valid` returns `False`, it also prints a message indicating the  reason why. See the following example:
+In the following cell one can see how to use `EmailValidator`, which is a `Python` class designed to check whether an email address is valid or not. To utilize it, one only needs to instantiate it and use its convenience function `is_email_valid`, which returns a boolean value indicating whether the input email is valid or not. In case `is_email_valid` returns `False`, it also prints a message indicating the  reason why. See the following example:
 ```python
 from validator import EmailValidator
 
@@ -24,7 +24,7 @@ EmailValidator.fast_validation('userexample.com') # notice there is no need to i
 # output: False
 ```
 
-Yet another (with error message):
+Yet another example (with error message):
 ```python
 validator = EmailValidator()
 validator.is_email_valid('userexample.com')
